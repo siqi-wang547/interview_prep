@@ -63,7 +63,7 @@ public class Maze {
 
     /**
      * LC505 the maze ii, BFS with PQ (Dijkstra)
-     *
+     * Dijkstra's algo: http://www.cnblogs.com/biyeymyhjob/archive/2012/07/31/2615833.html
      * @param maze
      * @param start
      * @param des

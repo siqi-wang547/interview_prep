@@ -1,4 +1,4 @@
-package Array;
+package array;
 import tree.TreeNode;
 import java.util.*;
 

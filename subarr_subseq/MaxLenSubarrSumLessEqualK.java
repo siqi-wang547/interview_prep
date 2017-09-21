@@ -3,6 +3,12 @@ import java.util.*;
 
 public class MaxLenSubarrSumLessEqualK {
 
+    /**
+     * Question from: https://stackoverflow.com/questions/39084147/largest-sum-of-contiguous-subarray-no-larger-than-k
+     * @param a input array, can have negative values
+     * @param k input target number K
+     * @return max sum
+     */
     public int maxSumSubArray(int[] a , int k) {
 
         int max = Integer.MIN_VALUE;
