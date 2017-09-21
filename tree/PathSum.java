@@ -4,7 +4,7 @@ import java.util.*;
 
 public class PathSum {
     /**
-     * Leetcode 112. Path Sum
+     * LC112. Path Sum
      * @param root
      * @param sum
      * @return
@@ -17,7 +17,7 @@ public class PathSum {
 
 
     /**
-     * Leetcode 113. Path Sum II
+     * LC113. Path Sum II
      * @param root
      * @param sum
      * @return
@@ -47,7 +47,7 @@ public class PathSum {
     }
 
     /**
-     * Leetcode 437. Path Sum III, intuitive solution
+     * LC437. Path Sum III, intuitive solution
      * @param root
      * @param sum
      * @return
@@ -68,7 +68,7 @@ public class PathSum {
     }
 
     /**
-     * Leetcode 437. Path Sum III, O(n)r solution
+     * LC437. Path Sum III, O(n)r solution
      * @param root
      * @param sum
      * @return
@@ -92,7 +92,7 @@ public class PathSum {
     }
 
     /**
-     * Leetcode 124. Binary Tree Maximum Path Sum
+     * LC124. Binary Tree Maximum Path Sum
      * trick: in recursion the return value is only a downward maximum while using an array to record the global maximum
      * @param root
      * @return

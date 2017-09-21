@@ -1,4 +1,4 @@
-package subarrarysubsequence;
+package subarr_subseq;
 
 
 public class Subsequence {
