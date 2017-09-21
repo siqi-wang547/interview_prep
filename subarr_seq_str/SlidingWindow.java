@@ -1,4 +1,4 @@
-package subarr_subseq;
+package subarr_seq_str;
 
 import java.util.*;
 import java.util.function.Supplier;

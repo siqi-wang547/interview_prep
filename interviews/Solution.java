@@ -1,7 +1,4 @@
-package appleinterview;
-
-import java.util.*;
-import java.io.*;
+package interviews;
 
 public class Solution {
     static int[] mergeArrays(int[] a, int[] b) {
