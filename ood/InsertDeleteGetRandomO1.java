@@ -63,6 +63,8 @@ class RandomizedSet implements InsertDeleteGetRandomO1 {
 class RandomizedCollection implements InsertDeleteGetRandomO1 {
 
     private List<Integer> arr;
+
+    // use linked hashset because the iterator of hashset is O(h/n) where h is the capacity of set
     private Map<Integer, LinkedHashSet<Integer>> map;
     private Random rand;
 
@@ -72,7 +74,6 @@ class RandomizedCollection implements InsertDeleteGetRandomO1 {
         rand = new Random();
     }
 
-    @Override
     public boolean insert(int val) {
         boolean contains = map.containsKey(val);
         if (!contains) {
@@ -85,15 +86,15 @@ class RandomizedCollection implements InsertDeleteGetRandomO1 {
 
     // 1, 1, 2, 3 -> (1: 0, 1), (2: 2), (3: 3)
 
-    @Override
     public boolean remove(int val) {
         boolean contains = map.containsKey(val);
         if (contains) {
             int lastIdx = arr.size() - 1, lastElem = arr.get(lastIdx);
             int valIdx = map.get(val).iterator().next();
             map.get(val).remove(valIdx);
-            // must be here, otherwise in edge case where lastElem == val, the lastIdx won't be able to added
+            // must be removed before the if block, otherwise in edge case where lastElem == val, the lastIdx won't be able to added
             // edge case (insert 4,3,4,2,4) and then (remove 4,3,4,4)
+
             if (valIdx < lastIdx) {
                 map.get(lastElem).remove(lastIdx);
                 map.get(lastElem).add(valIdx);
@@ -105,7 +106,6 @@ class RandomizedCollection implements InsertDeleteGetRandomO1 {
         return contains;
     }
 
-    @Override
     public int getRandom() {
         return arr.get(rand.nextInt(arr.size()));
     }
