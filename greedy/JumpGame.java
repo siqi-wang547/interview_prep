@@ -45,7 +45,7 @@ public class JumpGame {
             }
         }
 
-        
+
 
         return jumps;
     }
