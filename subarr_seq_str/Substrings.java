@@ -1,9 +1,10 @@
-import java.utils.*;
-improt java.io.*;
+package subarr_seq_str;
+import java.util.*;
+//improt java.io.*;
 
 public class Substrings {
 
-	/ **
+	/**
 	** LC_76. Minimum Window Substring: find the minimal substring of s that contains all chars in t
 	** Solution: 用[start,end]记录一个window,从[0,0]开始,到[0,end]满足条件时,增加start,并更新minimal_length,重复,直到遍历结束,返回最小window
 	** Tricks: 1. 用一个map判断字母出现次数,并依此判断substring是否满足条件(cnt == 0);
@@ -11,12 +12,12 @@ public class Substrings {
 	**         3. end右移,如果[start,new_end]满足条件,重复
 	*/
 	public String minWindow(String s, String t) {
-		if (s.length() < t.length() || t.length == 0) return "";
+		if (s.length() < t.length() || t.length() == 0) return "";
         Map<Character, Integer> map = new HashMap<>();
         for (char c: t.toCharArray()) 
         	map.put(c, map.getOrDefault(c, 0) + 1);
         int cnt = map.size();
-        int start = 0, end = 0;
+        int start = 0, end = 0, head = 0;
         int len = Integer.MAX_VALUE;
 
         while (end < s.length()) {
@@ -43,7 +44,7 @@ public class Substrings {
         return len == Integer.MAX_VALUE? "": s.substring(head, head + len);
     }
 
-    / **
+    /**
     ** LC_438. Find All Anagrams in a String
     ** Solution: 和上题一致,仅判断substring是否满足的条件不同,且需保存所有满足条件时的值
     */
@@ -76,7 +77,7 @@ public class Substrings {
         return res;
     }
 
-    / **
+    /**
     ** LC_3. Longest Substring Without Repeating Characters
     ** Solution: 仅有一个string,没有一个smaller string情况,end右移map更新,用cnt记录判断是否有重复字母,有重复则start右移
     ** Tricks: start右移时,仅当如果start处字母满足条件(map.get>1),则更改substring满足条件的边界条件(cnt--)
@@ -103,7 +104,7 @@ public class Substrings {
         return len;
     }
 
-    / **
+    /**
      * LC424 Longest Repeating Character Replacement
      * Solution: We either grow the window by appending one char on the right, or shift the whole window to the right by one. And we only grow the window when the count of the new char exceeds the historical max count (from a previous window that covers a valid substring).
      * Tricks: Max is not the accurate return value, nor is max+k. Accurate return value should be the window size.
