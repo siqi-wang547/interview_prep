@@ -1,7 +1,15 @@
 package backtrack;
+
 import java.util.*;
 
 public class WordSearch {
+
+    /**
+     * LC79. Word Search
+     * @param board input char board
+     * @param word input word
+     * @return whether word found in board
+     */
     public static boolean exist(char[][] board, String word) {
         int m = board.length, n = board[0].length;
         // boolean[][] visited = new boolean[m][n]; not right!
