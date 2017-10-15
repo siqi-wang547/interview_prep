@@ -1,7 +1,9 @@
 package topologicalsort;
 import java.util.*;
+
 public class KillProcess {
-    public static List<Integer> killProcess(List<Integer> pid, List<Integer> ppid, int kill) {
+
+    private static List<Integer> killProcess(List<Integer> pid, List<Integer> ppid, int kill) {
         Map<Integer, List<Integer>> map = new HashMap<>();
         Queue<Integer> q = new LinkedList<>();
         for (int i = 0; i < ppid.size(); i++) {
